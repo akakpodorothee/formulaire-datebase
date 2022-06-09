@@ -37,5 +37,3 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
      echo "Record is saved.";
 
 
-//test
-

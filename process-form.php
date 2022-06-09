@@ -34,7 +34,7 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
                              $type);
      mysqli_stmt_execute($stmt);
 
-     echo "Record saved.";
+     echo "Record is saved.";
 
 
 

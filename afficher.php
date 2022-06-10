@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos contacts</title>
+     <link rel="stylesheet" href="">
+    <title>Contacts</title>
 </head>
-<body>
-    
+  <style>
+      table{
+          border: solid 2px;
+          width:80% ;
+      }
+  </style>
+     <body>  
+           <h4> Listes des Contacts</h4>
+           <table>
+               <tr>
+                   <th>Id</th>
+                   <th>name</th>
+                   <th>body</th>
+                   <th>priority</th>
+                  <th>type</th>
+                  <th>Supprimer</th>
+                  <th>Modifier</th>
+               </tr>
+                    <?php
+                    
+                     require_once("connect.php");
+                    $req=$conn->query("SELECT * FROM message");
+                    while($aff=$req->fetch_assoc()){ 
+                        ?>
+                    <tr>
+                       <td> <?php echo $aff['Id']; ?>  </td>
+                       <td> <?php echo $aff['name']; ?> </td>
+                       <td> <?php echo $aff['body']; ?> </td>
+                       <td> <?php echo $aff['priority']; ?> </td>
+                       <td> <?php echo $aff['type']; ?>  </td>
+                        
+                       <td>
 
-<h4>listes des contacts</h4>
-
-  <table>
-     <th>id</th>
-     <th>name</th>
-     <th>body</th>
-     <th>priority</th>
-     <th>type</th>
-
-    <?php
-
-        require_once("connect.process-form.php");
-        $req=$con->query("SELECT * FROM message");
-       while($aff=$req->fetch()){?>
-
-         <tr>
-             <td>  <?php echo $aff['id']; ?> </td>
-             <td> <?php echo $aff['name']; ?> </td>
-             <td> <?php echo $aff['body']; ?> </td>
-             <td> <?php echo $aff['priority']; ?> </td>
-             <td> <?php echo $aff['type']; ?> </td>
-         </tr>
-    <?php{?>
-
-</table>
-</body>
+                       <a href="modifier.php?Id=<?php echo $aff['Id'] ?>">Modifier</a>
+                       <a href="supprimer.php?Id=<?php echo $aff['Id'] ?>">Supprimer</a>
+                       </td>
+                    </tr>
+                   <?php } ?>
+               
+           </table>
+     </body>  
 </html>

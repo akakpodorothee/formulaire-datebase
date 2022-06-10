@@ -1,5 +1,5 @@
 <?php
-
+require_once('connect.php');
 $name = $_POST["name"];
 $message = $_POST["message"];
 $priority = filter_input(INPUT_POST, "priority" ,FILTER_VALIDATE_INT);
@@ -10,16 +10,16 @@ if (! $terms) {
     die("Terms must be accepted");
 }
 
-$host = "localhost";
-$dbname = "message_db";
-$username = "root";
-$password = "";
+// $host = "localhost";
+// $dbname = "message_db";
+// $username = "root";
+// $password = "";
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
+// $conn = mysqli_connect($host, $username, $password, $dbname);
 
-  if (mysqli_connect_errno()){
-    die("Connection error: " . mysqli_connect_error());
- }
+//   if (mysqli_connect_errno()){
+//     die("Connection error: " . mysqli_connect_error());
+//  }
 
  $sql = "INSERT INTO message (name, body, priority, type)
           VALUES (? , ? , ?, ?)"; 

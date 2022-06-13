@@ -36,12 +36,12 @@
                        <td> <?php echo $aff['name']; ?> </td>
                        <td> <?php echo $aff['body']; ?> </td>
                        <td> <?php echo $aff['priority']; ?> </td>
-                       <td> <?php echo $aff['type']; ?>  </td>
-                        
+                       <td> <?php echo $aff['type']; ?>  </td>                       
                        <td>
-
-                       <a href="modifier.php?Id=<?php echo $aff['Id'] ?>">Modifier</a>
                        <a href="supprimer.php?Id=<?php echo $aff['Id'] ?>">Supprimer</a>
+                       </td>
+                       <td>
+                       <a href="modifier.php?Id=<?php echo $aff['Id'] ?>">Modifier</a>
                        </td>
                     </tr>
                    <?php } ?>

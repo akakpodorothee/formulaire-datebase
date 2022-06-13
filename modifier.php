@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -38,13 +39,13 @@
 
                 <br>
 
-              <label for="">
+              <label >
                   <input type="radio" name="type" value="2" id="">
                    Suggestion
                </label>
          </fieldset>
 
-              <label for="">
+              <label >
                  <input type="checkbox" name="terms">
                   I agree to the terms and conditions
              </label>
@@ -65,10 +66,11 @@
               $Id=$_GET["Id"];
               $req=$conn->query("UPDATE message SET name='$name' ,body='$message' ,priority='$priority' WHERE Id=$Id");
               if($req){
-                  echo "Modifier Reussie";
+                  echo "Modifier Réussie";
               }
 
             }
+            ?>
 </body>
 
 </html>
